@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T. Lakshmi Narasimha </title>
+    <!-- Use Tailwind CSS for a professional, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Font Awesome for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Use a modern, professional font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-light: #f8fafc;
+            --text-color-light: #1f2937;
+            --bg-card-light: #ffffff;
+            --border-light: #e2e8f0;
+            --primary-color-light: #4c51bf;
+            --accent-color-light: #667eea;
+
+            --bg-color-dark: #111827;
+            --text-color-dark: #e5e7eb;
+            --bg-card-dark: #1f2937;
+            --border-dark: #374151;
+            --primary-color-dark: #3b82f6;
+            --accent-color-dark: #2563eb;
+        }
+
+        /* Default to dark theme */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.light-mode {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        .section-card {
+            background-color: var(--bg-card-dark);
+            border-color: var(--border-dark);
+            transition: background-color 0.5s, border-color 0.5s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        body.light-mode .section-card {
+            background-color: var(--bg-card-light);
+            border-color: var(--border-light);
+        }
+
+        /* Hero section background */
+        #hero {
+            background-image: linear-gradient(to bottom right, #111827, #1f2937);
+        }
+        body.light-mode #hero {
+            background-image: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
+        }
+
+        /* Custom scrollbar for a sleeker look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-card-dark);
+        }
+
+        body.light-mode ::-webkit-scrollbar-track {
+            background: var(--border-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color-dark);
+            border-radius: 4px;
+        }
+
+        body.light-mode ::-webkit-scrollbar-thumb {
+            background: var(--primary-color-light);
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-500">
+        
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-500 hover:text-blue-400 transition-colors duration-300">T. Lakshmi Narasimha</a>
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">Skills</a>
+                    <a href="#certifications" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">Certifications</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">Contact</a>
+                </div>
+                <!-- Theme Switcher -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
+                    <i id="theme-icon" class="fas fa-sun text-xl text-yellow-400"></i>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="md:hidden text-gray-300 hover:text-blue-500 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 shadow-lg border-t border-gray-700 transition-colors duration-500">
+            <a href="#about" class="block px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-blue-500 transition-colors duration-300">About</a>
+            <a href="#projects" class="block px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-blue-500 transition-colors duration-300">Projects</a>
+            <a href="#skills" class="block px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-blue-500 transition-colors duration-300">Skills</a>
+            <a href="#certifications" class="block px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-blue-500 transition-colors duration-300">Certifications</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-blue-500 transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-24 md:py-32 flex items-center justify-center overflow-hidden">
+            <div class="relative z-10 container mx-auto px-6 text-center">
+                <div class="flex flex-col items-center">
+                    <!-- Placeholder profile image -->
+                    <div class="w-36 h-36 rounded-full bg-blue-500 flex items-center justify-center text-white text-6xl font-bold mb-6 shadow-xl border-4 border-blue-400 transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white animate-fadeIn">T. Lakshmi Narasimha</h1>
+                    <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl text-gray-300 animate-fadeIn" style="animation-delay: 0.2s;">
+                        Data Science & Web Development Enthusiast
+                    </p>
+                    <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105 animate-fadeIn" style="animation-delay: 0.4s;">
+                        Let's Connect <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-transparent">
+            <div class="container mx-auto px-6 max-w-4xl animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-500">About Me</h2>
+                <div class="section-card p-8 md:p-12 rounded-xl shadow-lg border">
+                    <p class="text-lg leading-relaxed mb-4">
+                        I am a B.Tech student specializing in Data Science at Madanapalle Institute of Technology and Sciences. My career objective is to secure a position that leverages my skills and provides opportunities for continuous growth. I have a strong foundation in machine learning and web development, with hands-on experience in building practical applications.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        My passion lies in using data to solve problems and creating intuitive, user-friendly web experiences. I am proficient in Python and JavaScript and am always eager to learn new technologies and apply them to challenging projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 bg-transparent">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-500">My Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1: Rainfall Prediction -->
+                    <div class="section-card rounded-xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border transform hover:-translate-y-2 animate-fadeIn">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-2">Rainfall Prediction</h3>
+                        <p class="text-sm text-gray-400 mb-4">Machine Learning | 1 Month</p>
+                        <p class="mb-4">
+                            Developed a machine learning model using Python to forecast rainfall amounts based on historical weather data. This project involved comprehensive data preprocessing and the application of regression algorithms to predict outcomes.
+                        </p>
+                        <div class="flex items-center space-x-2 text-gray-400">
+                            <i class="fas fa-code"></i>
+                            <span>Python, NumPy, Pandas, Matplotlib</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: E-commerce Website -->
+                    <div class="section-card rounded-xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border transform hover:-translate-y-2 animate-fadeIn" style="animation-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-2">E-commerce Website</h3>
+                        <p class="text-sm text-gray-400 mb-4">Web Development | 2 Weeks</p>
+                        <p class="mb-4">
+                            Designed and built a fully functional e-commerce platform. The website includes essential features such as user authentication, a comprehensive product catalog, a shopping cart, and a secure checkout process.
+                        </p>
+                        <div class="flex items-center space-x-2 text-gray-400">
+                            <i class="fas fa-globe"></i>
+                            <span>HTML, CSS, JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Crop Price Prediction -->
+                    <div class="section-card rounded-xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border transform hover:-translate-y-2 animate-fadeIn" style="animation-delay: 0.4s;">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-2">Crop Price Prediction</h3>
+                        <p class="text-sm text-gray-400 mb-4">Data Analytics | 1 Month</p>
+                        <p class="mb-4">
+                            A data analytics solution to assist farmers in making informed decisions. The project allows them to compare crop prices across various markets to optimize their selling strategy for better returns.
+                        </p>
+                        <div class="flex items-center space-x-2 text-gray-400">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data Analysis, Web Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-transparent">
+            <div class="container mx-auto px-6 max-w-4xl animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-500">Technical Skills</h2>
+                <div class="section-card p-8 rounded-xl shadow-lg border">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-4 flex items-center"><i class="fas fa-terminal mr-3"></i>Programming & Web</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i>Python, JavaScript, C++</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i>HTML, CSS</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-400 mb-4 flex items-center"><i class="fas fa-tools mr-3"></i>Libraries & Tools</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i>NumPy, Pandas, Matplotlib</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i>PowerBI, Tableau</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i>Windows, Ubuntu, MS Office</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-16 md:py-24 bg-transparent">
+            <div class="container mx-auto px-6 max-w-4xl animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-500">Certifications</h2>
+                <div class="section-card p-8 rounded-xl shadow-lg border">
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-blue-500 mr-4 mt-1"></i>
+                            <div>
+                                <span class="font-semibold">SQL</span> - IBM (Nov-2024)
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-blue-500 mr-4 mt-1"></i>
+                            <div>
+                                <span class="font-semibold">Power BI & Tableau</span> - Udemy (Dec-2024)
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-blue-500 mr-4 mt-1"></i>
+                            <div>
+                                <span class="font-semibold">C++ Programming</span> - GeeksforGeeks (Jan-Mar 2025)
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-blue-500 mr-4 mt-1"></i>
+                            <div>
+                                <span class="font-semibold">Cloud Computing (Silver)</span> - NPTEL
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-transparent">
+            <div class="container mx-auto px-6 max-w-4xl text-center animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-500">Get In Touch</h2>
+                <p class="text-lg md:text-xl font-light mb-8">
+                    I am actively seeking new opportunities in data science and web development. Feel free to reach out to me!
+                </p>
+                <div class="flex justify-center space-x-6 md:space-x-12">
+                    <a href="mailto:narasimhathaluru10@email.com" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">
+                        <i class="fas fa-envelope text-3xl md:text-4xl"></i>
+                    </a>
+                    <a href="tel:9032901139" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">
+                        <i class="fas fa-phone-alt text-3xl md:text-4xl"></i>
+                    </a>
+                    <!-- Placeholder for LinkedIn or GitHub link -->
+                    <a href="https://www.linkedin.com/in/narasimha-thaluru-299599298" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">
+                        <i class="fab fa-linkedin text-3xl md:text-4xl"></i>
+                    </a>
+                    <a href="https://github.com/narasimhathaluru" class="text-gray-300 hover:text-blue-500 transition-colors duration-300">
+                        <i class="fab fa-github text-3xl md:text-4xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-gray-500 py-6 text-center border-t border-gray-700 transition-colors duration-500">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 T. Lakshmi Narasimha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Theme Switcher, Mobile Menu, and Smooth Scrolling -->
+    <script>
+        // Theme Toggler functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                themeIcon.classList.remove('fa-moon', 'text-gray-600');
+                themeIcon.classList.add('fa-sun', 'text-yellow-400');
+            } else {
+                body.classList.add('light-mode');
+                themeIcon.classList.remove('fa-sun', 'text-yellow-400');
+                themeIcon.classList.add('fa-moon', 'text-gray-600');
+            }
+        });
+
+        // Toggle mobile menu
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple animation on scroll
+        const faders = document.querySelectorAll('.animate-fadeIn');
+        const appearOptions = {
+            threshold: 0.2, // Trigger when 20% of the element is visible
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.style.opacity = 1;
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            fader.style.opacity = 0; // Start invisible
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>
